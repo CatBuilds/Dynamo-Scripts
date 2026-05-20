@@ -1,0 +1,602 @@
+{
+  "Uuid": "0b386d40-1c81-45cc-ac21-a3b092812c68",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Missing Mark Checker",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 179,
+      "SelectedString": "OST_Doors",
+      "Id": "8141eb25ac0244e4bb3a2396c7bf4270",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2503ed008321406585be09cebf0507fc",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "Id": "dd747d1f67ba4503bf3a13982cfcd343",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "d2aa8b6c2ca0498fa844b82c9b5ccc14",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "03321d03110b4df0a420385de1f9c4c6",
+          "Name": "Elements",
+          "Description": "An element class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "d8f427c0738b40c5bc80ae5e265ed551",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "693d0483a3fa40479bc41f7efdce26be",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4d8d7d851bce4c82822362c6e2193e4c",
+          "Name": "parameterName",
+          "Description": "The name of the parameter whose value you want to obtain.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7ea3ee67b47f4aabbd506390eb283f70",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Replication": "Auto",
+      "Description": "Get the value of one of the element's parameters.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "SerializedWidth": 0.0,
+      "SerializedHeight": 0.0,
+      "Id": "60e5413030fa497d92f478eeee30c38c",
+      "NodeType": "StringInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cfaccb479367458d93fa4c33fbbfe025",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string.",
+      "InputValue": "Mark"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2f5fb1e1d6804253a7c79fccfbf71106",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "aeda28846acf46f9ac60af1896e1bfe6",
+          "Name": "str",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4451709aeb9344ecae5963166b9a034c",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "archilab.Core.Strings.IsNullOrEmpty@string",
+      "Replication": "Auto",
+      "Description": "Strings.IsNullOrEmpty (str: string): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "993872950ac44e5481faf824ee0ccf82",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f941a3ee031b4de3a5f70f937b0afe42",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "92c2b4857d0e4e15aacbecece5eaa5de",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "769d874b3c524ee08ee7180c876a3bab",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b1cecedad8fb4fa794ed6509e3d3857f",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "45153daa-f672-47f2-898f-f062bcb4e398",
+      "FunctionType": "Graph",
+      "Id": "8abc051c31224dc1aead02c541bd8924",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b87b6025c67546da904646d335e70331",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "618631f6b5cd4ff8b50a844cdf979b08",
+          "Name": "int",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the ID of a given Revit elements. Unlike the OOTB Element.Id node, this node also works on mixed lists of Revit elements and categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "39e4ed58294d4fa9b1636704a8565da1",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ade04df0762c4921a7d550aa2601bff1",
+          "Name": "list",
+          "Description": "The list find the true boolean values.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b65cefaf8a514e5bbfd2be7ab7962779",
+          "Name": "int",
+          "Description": "The number of true boolean values in the list.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.CountTrue@var[]..[]",
+      "Replication": "Auto",
+      "Description": "Returns the number of true boolean values in the given list.\n\nList.CountTrue (list: var[]..[]): int"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2503ed008321406585be09cebf0507fc",
+      "End": "d2aa8b6c2ca0498fa844b82c9b5ccc14",
+      "Id": "a377dcedd4a448d794c8e8c322b7c5e8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "03321d03110b4df0a420385de1f9c4c6",
+      "End": "693d0483a3fa40479bc41f7efdce26be",
+      "Id": "a9607d16fca644819d4ea6048b66973d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "03321d03110b4df0a420385de1f9c4c6",
+      "End": "f941a3ee031b4de3a5f70f937b0afe42",
+      "Id": "e2cd2bf81e6c4eba923ef8274c0f30ed",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7ea3ee67b47f4aabbd506390eb283f70",
+      "End": "aeda28846acf46f9ac60af1896e1bfe6",
+      "Id": "837a26ab66504621b20676b2670a8ed7",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cfaccb479367458d93fa4c33fbbfe025",
+      "End": "4d8d7d851bce4c82822362c6e2193e4c",
+      "Id": "6e2ec8f0aeba42828391e53224441255",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4451709aeb9344ecae5963166b9a034c",
+      "End": "92c2b4857d0e4e15aacbecece5eaa5de",
+      "Id": "c051ed23d7f74bee831783cd2f154c18",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4451709aeb9344ecae5963166b9a034c",
+      "End": "ade04df0762c4921a7d550aa2601bff1",
+      "Id": "99811f85ab5248eab2ab94ab99a3476e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "769d874b3c524ee08ee7180c876a3bab",
+      "End": "b87b6025c67546da904646d335e70331",
+      "Id": "a432cc07966d4489a4d0f84b0efdc8d6",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [
+    "45153daa-f672-47f2-898f-f062bcb4e398"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2025.300.1225",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "2f5fb1e1d6804253a7c79fccfbf71106"
+      ]
+    },
+    {
+      "Name": "Clockwork for Dynamo 3.x",
+      "Version": "3.3.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "8abc051c31224dc1aead02c541bd8924"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.1.9895",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "8141eb25ac0244e4bb3a2396c7bf4270",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 195.9999999999999,
+        "Y": 238.4000000000001
+      },
+      {
+        "Id": "dd747d1f67ba4503bf3a13982cfcd343",
+        "Name": "All Elements of Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 482.4,
+        "Y": 238.39999999999986
+      },
+      {
+        "Id": "d8f427c0738b40c5bc80ae5e265ed551",
+        "Name": "Element.GetParameterValueByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 818.415695323256,
+        "Y": 532.4178305580381
+      },
+      {
+        "Id": "60e5413030fa497d92f478eeee30c38c",
+        "Name": "String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 606.1771060981637,
+        "Y": 566.59861630238
+      },
+      {
+        "Id": "2f5fb1e1d6804253a7c79fccfbf71106",
+        "Name": "Strings.IsNullOrEmpty",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1229.1771352771061,
+        "Y": 634.6288366358249
+      },
+      {
+        "Id": "993872950ac44e5481faf824ee0ccf82",
+        "Name": "List.FilterByBoolMask",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1646.3079769649103,
+        "Y": 254.4200812988148
+      },
+      {
+        "Id": "8abc051c31224dc1aead02c541bd8924",
+        "Name": "Element.ID+",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1935.9068984352639,
+        "Y": 250.51616110273915
+      },
+      {
+        "Id": "39e4ed58294d4fa9b1636704a8565da1",
+        "Name": "List.CountTrue",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1534.2165277148583,
+        "Y": 750.3770762719857
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "23c1eb2119694586ae8eabcbc8d4c3fa",
+        "Title": "Selecting all doors in the project",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "8141eb25ac0244e4bb3a2396c7bf4270",
+          "dd747d1f67ba4503bf3a13982cfcd343"
+        ],
+        "HasNestedGroups": false,
+        "Left": 185.9999999999999,
+        "Top": 165.99999999999986,
+        "Width": 563.2000000000002,
+        "Height": 202.60000000000022,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 238.39999999999986,
+        "InitialHeight": 145.00000000000023,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "e67911d7cf7b4229b70d8cb90793ffe4",
+        "Title": "Finding values from parameter Mark",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d8f427c0738b40c5bc80ae5e265ed551",
+          "60e5413030fa497d92f478eeee30c38c"
+        ],
+        "HasNestedGroups": false,
+        "Left": 596.1771060981637,
+        "Top": 416.81783055803805,
+        "Width": 578.6385892250923,
+        "Height": 279.98078574434203,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 532.4178305580381,
+        "InitialHeight": 179.18078574434196,
+        "TextblockHeight": 105.6,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "9e8c0bcc34a94f1b9ebef120d6f00c5d",
+        "Title": "Showing null or emties as ''true''",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2f5fb1e1d6804253a7c79fccfbf71106"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1219.1771352771061,
+        "Top": 466.2288366358249,
+        "Width": 261.5999999999999,
+        "Height": 298.6,
+        "FontSize": 36.0,
+        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
+        "InitialTop": 634.6288366358249,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 158.39999999999998,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "90bead0f29fa416c92c6e65ff143fe23",
+        "Title": "Listing specific doors and element ID's (insert in Revit)",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "993872950ac44e5481faf824ee0ccf82",
+          "8abc051c31224dc1aead02c541bd8924"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1636.3079769649103,
+        "Top": 134.91616110273915,
+        "Width": 504.79892147035343,
+        "Height": 283.30392019607564,
+        "FontSize": 36.0,
+        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
+        "InitialTop": 250.51616110273915,
+        "InitialHeight": 148.90392019607566,
+        "TextblockHeight": 105.6,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "f939a189ea734eceba69b60c7bcb1ecd",
+        "Title": "Note description",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "f32ba4f18b2f4766934677cfe7a6f53b"
+        ],
+        "HasNestedGroups": false,
+        "Left": -168.11102761937923,
+        "Top": 168.47081756363974,
+        "Width": 320.0,
+        "Height": 678.6000000000001,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 250.47081756363974,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 72.0,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "f32ba4f18b2f4766934677cfe7a6f53b",
+        "Title": "Script Name: Missing Mark Checker\r\nCategory: QC - Quality Control\r\nAuthor: Catrqu\r\nDate: 16-05-2026\r\nVersion: 1.0\r\nDescription:\r\nThis script scans all doors in the active Revit project and identifies any doors where the Mark parameter is completely empty. Empty marks cause missing information in schedules, tags and construction documents and are difficult to spot manually in large projects.\r\nHow to use:\r\n\t1.\tOpen script in Dynamo Player or Dynamo\r\n\t2.\tRun the script\r\n\t3.\tCheck the Output group for the Element IDs of doors with missing marks\r\n\t4.\tNote the total count of missing marks\r\n\t5.\tGo to Revit → Manage → Select by ID\r\n\t6.\tPaste each ID to locate and fix the door manually\r\nInput: All doors in the active Revit project\r\nOutput:\r\n\t•\tList of door Element IDs with empty Mark values\r\n\t•\tTotal count of doors with missing marks\r\nNotes:\r\n\t•\tScript only reports problems — it does not change anything in your model\r\n\t•\tCan be adapted for Windows, Rooms or any other category by changing the Category input node\r\n\t•\tRun the script again after fixing to confirm all marks are filled\r\n",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -158.11102761937923,
+        "Top": 258.47081756363974,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 245.0824440850908,
+    "Y": 277.29823692321764,
+    "Zoom": 0.22172861671029298
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "Uuid": "08ebcf61-b69e-4409-af60-f8a37ca1f65d",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Unplaced Rooms Checker",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 508,
+      "SelectedString": "OST_Rooms",
+      "Id": "2f70933c0a6e435ab6a30c6f2d4a9f45",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "200d4a4d2dfa4e06be69e5418b1bd989",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "Id": "6fec599990474bdf8176ab6691167034",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "285157f51c2d40e7997470c64e33a246",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "56a967a49bf84bcebef92b55464c5210",
+          "Name": "Elements",
+          "Description": "An element class.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c79783681c2c4b4fb7629245b6146dfc",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9ceee296e01340bb856556914e8758d4",
+          "Name": "list",
+          "Description": "List to filter.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6d5bb81dc9704b1bb11f684185c3cbb9",
+          "Name": "mask",
+          "Description": "List of booleans representing a mask.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4a6d835a3d494a55aa7c1d6c8b350850",
+          "Name": "in",
+          "Description": "Items whose mask index is true.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f57d542cf07247a8baa56b9c9fd7a158",
+          "Name": "out",
+          "Description": "Items whose mask index is false.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Replication": "Auto",
+      "Description": "Filters a sequence by looking up corresponding indices in a separate list of booleans.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "1ba5ba27c2904cd5824347fed2b8ec98",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f42579630cbf4773a2e360dfb7bbfdef",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f72610af8f9f41ed9eb100b639cbd76a",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "dd2a00353ba740a39abd209fe60f2b95",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "d0c6d12ab424417984a0b3b74659227d",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "67b316d66d824649a25062d748c63dfe",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Replication": "Auto",
+      "Description": "Get the Name of the Element\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "417e41ce41554b88af081df1d4c5e5f0",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b369301720e341fe8fe1b9187fc46169",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0a71903ace1f45b587f96e969f1a4144",
+          "Name": "geometry[]",
+          "Description": "The element’s location",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Revit.Elements.Element.GetLocation",
+      "Replication": "Auto",
+      "Description": "Returns an element's location\n\nElement.GetLocation ( ): Geometry"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "30f00211e6ee4531b9d47e1565479f36",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "987ff619109942628bb1b78fef358027",
+          "Name": "object",
+          "Description": "Object to test.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "57c26fdbd67f4642a9cdf984f0e08279",
+          "Name": "bool",
+          "Description": "Whether object is null.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.Object.IsNull@var",
+      "Replication": "Auto",
+      "Description": "Determines if the given object is null.\n\nObject.IsNull (object: var): bool"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "200d4a4d2dfa4e06be69e5418b1bd989",
+      "End": "285157f51c2d40e7997470c64e33a246",
+      "Id": "54a14528f28e4d41b1187f8cd7918ea3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "56a967a49bf84bcebef92b55464c5210",
+      "End": "9ceee296e01340bb856556914e8758d4",
+      "Id": "15b28e4606654e929db97bd6f667c246",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "56a967a49bf84bcebef92b55464c5210",
+      "End": "b369301720e341fe8fe1b9187fc46169",
+      "Id": "39a681fe58844d68b3d7975fa9739520",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4a6d835a3d494a55aa7c1d6c8b350850",
+      "End": "f42579630cbf4773a2e360dfb7bbfdef",
+      "Id": "9e99efb8273a4256973903a26f1f02d5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f57d542cf07247a8baa56b9c9fd7a158",
+      "End": "d0c6d12ab424417984a0b3b74659227d",
+      "Id": "653be6892b7846a4b4c48dc7d19315f3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "0a71903ace1f45b587f96e969f1a4144",
+      "End": "987ff619109942628bb1b78fef358027",
+      "Id": "4849eac6aaac4c59993ae5d13d70340d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "57c26fdbd67f4642a9cdf984f0e08279",
+      "End": "6d5bb81dc9704b1bb11f684185c3cbb9",
+      "Id": "450e803f92d54a6bac6f90e80e2a1c42",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.6",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "9.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.6.1.9895",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "2f70933c0a6e435ab6a30c6f2d4a9f45",
+        "Name": "Categories",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -501.2229137826721,
+        "Y": 837.5559553606081
+      },
+      {
+        "Id": "6fec599990474bdf8176ab6691167034",
+        "Name": "All Elements of Category",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -239.19763418426464,
+        "Y": 835.5887967365148
+      },
+      {
+        "Id": "c79783681c2c4b4fb7629245b6146dfc",
+        "Name": "List.FilterByBoolMask",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 785.5032153754992,
+        "Y": 846.0934494208246
+      },
+      {
+        "Id": "1ba5ba27c2904cd5824347fed2b8ec98",
+        "Name": "Element.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1177.777935748019,
+        "Y": 751.4416616002144
+      },
+      {
+        "Id": "dd2a00353ba740a39abd209fe60f2b95",
+        "Name": "Element.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1185.026635879421,
+        "Y": 1231.0270098751707
+      },
+      {
+        "Id": "417e41ce41554b88af081df1d4c5e5f0",
+        "Name": "Element.GetLocation",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 150.88197002657967,
+        "Y": 1173.9826675371448
+      },
+      {
+        "Id": "30f00211e6ee4531b9d47e1565479f36",
+        "Name": "Object.IsNull",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 477.58875447985326,
+        "Y": 1172.9022197554234
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "146c240bae224113abc140858e36cc72",
+        "Title": "Finding all rooms in the project",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "2f70933c0a6e435ab6a30c6f2d4a9f45",
+          "6fec599990474bdf8176ab6691167034"
+        ],
+        "HasNestedGroups": false,
+        "Left": -511.2229137826721,
+        "Top": 763.1887967365149,
+        "Width": 538.8252795984074,
+        "Height": 206.1671586240932,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 835.5887967365148,
+        "InitialHeight": 163.7671586240932,
+        "TextblockHeight": 62.4,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "ceadd2cedbe74162bb9eb4c6ceefd80e",
+        "Title": "Get locations on rooms and returning true to null",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "417e41ce41554b88af081df1d4c5e5f0",
+          "30f00211e6ee4531b9d47e1565479f36"
+        ],
+        "HasNestedGroups": false,
+        "Left": 140.88197002657967,
+        "Top": 1057.3022197554235,
+        "Width": 540.3067844532736,
+        "Height": 259.68044778172134,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 1172.9022197554234,
+        "InitialHeight": 174.08044778172143,
+        "TextblockHeight": 105.6,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "49f2062120eb4f658d5686c7d35893d0",
+        "Title": "List of rooms with no/null locations. Unplaced rooms:",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "1ba5ba27c2904cd5824347fed2b8ec98"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1167.777935748019,
+        "Top": 496.64166160021443,
+        "Width": 232.79999999999995,
+        "Height": 386.5999999999999,
+        "FontSize": 36.0,
+        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
+        "InitialTop": 751.4416616002144,
+        "InitialHeight": 161.79999999999995,
+        "TextblockHeight": 244.79999999999998,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "5e0d042e75c24068947932bd2a731bb9",
+        "Title": "List of rooms either placed or not enclosed.",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "dd2a00353ba740a39abd209fe60f2b95"
+        ],
+        "HasNestedGroups": false,
+        "Left": 1175.026635879421,
+        "Top": 1019.4270098751707,
+        "Width": 232.79999999999995,
+        "Height": 343.4,
+        "FontSize": 36.0,
+        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
+        "InitialTop": 1231.0270098751707,
+        "InitialHeight": 161.79999999999995,
+        "TextblockHeight": 201.6,
+        "Background": "#FFFFC999"
+      }
+    ],
+    "X": 330.9367009861569,
+    "Y": -157.89566947949473,
+    "Zoom": 0.4281759978755376
+  }
+}

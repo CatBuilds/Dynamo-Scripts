@@ -233,7 +233,7 @@
         }
       ],
       "FunctionSignature": "DSCore.List.Count@var[]..[]",
-      "Replication": "Auto",
+      "Replication": "Longest",
       "Description": "Returns the number of items stored in the given list.\n\nList.Count (list: var[]..[]): int"
     },
     {
@@ -455,7 +455,7 @@
     {
       "Start": "3e66fbedac7b4f16ad2d5d736435a8a7",
       "End": "4717500323e54664b378f1a6db065781",
-      "Id": "91a109bfcdd148ed9d5968e4d5770059",
+      "Id": "9b1042e7f0da421d9524c769cd2ce4fb",
       "IsHidden": "False"
     },
     {
@@ -467,7 +467,7 @@
     {
       "Start": "ba0eae6b477f4d85bca3f20872307a69",
       "End": "4419660879c1490fb9be5cc43bb47bac",
-      "Id": "e8132f2c8d474b06941f950f44d2b75a",
+      "Id": "2f97f33302b84269ac3414fe302ad0ed",
       "IsHidden": "False"
     },
     {
@@ -479,7 +479,7 @@
     {
       "Start": "d63a6d83ba5641a0868a195dd2e203d2",
       "End": "101cc39537264e20be6147870171cc3c",
-      "Id": "854192f40b404d4b9116570a5dd85f91",
+      "Id": "306936961a0348c2899155a6d0948d57",
       "IsHidden": "False"
     },
     {
@@ -572,8 +572,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 838.0098037666457,
-        "Y": 587.2448963837579
+        "X": 818.1941609310888,
+        "Y": 36.370025555277266
       },
       {
         "Id": "e25672cdcf54482bac05a707fa9db1d5",
@@ -582,8 +582,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 631.805648218212,
-        "Y": 664.5643558097148
+        "X": 544.1751593440567,
+        "Y": 63.684987973221894
       },
       {
         "Id": "d39b8d5c20074ea496afda15a441199c",
@@ -602,8 +602,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1729.0262120413875,
-        "Y": 609.824982342504
+        "X": 1758.8563870458777,
+        "Y": 624.740069844749
       },
       {
         "Id": "629a25162a4841b6a3223f7cb7de03e4",
@@ -612,8 +612,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1487.6744525210472,
-        "Y": 696.9446853637037
+        "X": 1517.5046275255374,
+        "Y": 711.8597728659487
       },
       {
         "Id": "5773e97e750445f5bc31bf7d62566dd3",
@@ -622,8 +622,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1924.0553317206682,
-        "Y": 609.4744021020872
+        "X": 1930.1187058431326,
+        "Y": 626.2774466660001
       },
       {
         "Id": "77bb31bc11d444a4835ae9e6b9800b1b",
@@ -632,7 +632,7 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2166.8543293512166,
+        "X": 2205.6409894375633,
         "Y": 342.2881654084297
       },
       {
@@ -642,8 +642,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2438.0005362250554,
-        "Y": 342.0496754078747
+        "X": 2543.7062793369287,
+        "Y": 344.13849227529306
       },
       {
         "Id": "5c83fb15a4ba449d9e53008f9872530c",
@@ -652,8 +652,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2782.27067046185,
-        "Y": 342.8300793529428
+        "X": 2915.3722295403704,
+        "Y": 440.142235273877
       },
       {
         "Id": "08f6011a1d484c88ad31059361621ab1",
@@ -662,15 +662,15 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2520.682045887571,
-        "Y": 719.6220378104144
+        "X": 2571.179377483521,
+        "Y": 709.1178420920941
       }
     ],
     "Annotations": [
       {
         "Id": "f770f48d81364f27af9d19f824d3a530",
-        "Title": "Selecting all doors in project",
-        "DescriptionText": "Description <Double click here to edit group description>",
+        "Title": "Scan all doors in the project",
+        "DescriptionText": "Select youyr choice of scan category",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
@@ -686,31 +686,30 @@
         "FontSize": 36.0,
         "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
         "InitialTop": 345.13181934793846,
-        "InitialHeight": 149.79999999999984,
+        "InitialHeight": 146.59167570982356,
         "TextblockHeight": 62.4,
         "Background": "#FFFFB8D8"
       },
       {
         "Id": "04aa7c8f13fd45449b69c873bcdb29f4",
-        "Title": "Finding every Marks value for every door",
+        "Title": "Finding values of the parameter name: ''Mark''",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
-          "1e82a1cced1747318f3cd0e080cdbd61",
-          "e25672cdcf54482bac05a707fa9db1d5"
+          "1e82a1cced1747318f3cd0e080cdbd61"
         ],
         "HasNestedGroups": false,
-        "Left": 621.805648218212,
-        "Top": 471.6448963837579,
-        "Width": 572.6041555484338,
-        "Height": 323.11945942595696,
+        "Left": 808.1941609310888,
+        "Top": -122.42997444472272,
+        "Width": 366.4000000000001,
+        "Height": 317.79999999999995,
         "FontSize": 36.0,
         "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
-        "InitialTop": 587.2448963837579,
-        "InitialHeight": 217.16050355202424,
-        "TextblockHeight": 105.6,
+        "InitialTop": 36.370025555277266,
+        "InitialHeight": 312.15037361381474,
+        "TextblockHeight": 148.79999999999998,
         "Background": "#FFB9F9E1"
       },
       {
@@ -737,76 +736,56 @@
       },
       {
         "Id": "dcd0ca75102e42f9b15f0e9c284ae1d2",
-        "Title": "Coutning amount in every group",
+        "Title": "Coutning amount in every group and finding >1 (mask)",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
           "4a8e6e615b48484386b66c9714f10a95",
-          "629a25162a4841b6a3223f7cb7de03e4"
-        ],
-        "HasNestedGroups": false,
-        "Left": 1477.6744525210472,
-        "Top": 494.22498234250395,
-        "Width": 396.5517595203403,
-        "Height": 332.9197030211998,
-        "FontSize": 36.0,
-        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
-        "InitialTop": 609.824982342504,
-        "InitialHeight": 232.1197030211997,
-        "TextblockHeight": 105.6,
-        "Background": "#FFA4E1FF"
-      },
-      {
-        "Id": "110c3e762dd24ae79218d57f24e43840",
-        "Title": "Which ones are > 1",
-        "DescriptionText": "Description <Double click here to edit group description>",
-        "IsExpanded": true,
-        "WidthAdjustment": 0.0,
-        "HeightAdjustment": 0.0,
-        "Nodes": [
+          "629a25162a4841b6a3223f7cb7de03e4",
           "5773e97e750445f5bc31bf7d62566dd3"
         ],
         "HasNestedGroups": false,
-        "Left": 1914.0553317206682,
-        "Top": 426.67440210208724,
-        "Width": 189.5999999999999,
-        "Height": 313.0,
+        "Left": 1507.5046275255374,
+        "Top": 509.14006984474895,
+        "Width": 602.2140783175953,
+        "Height": 334.5197030211997,
         "FontSize": 36.0,
-        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
-        "InitialTop": 609.4744021020872,
-        "InitialHeight": 145.0,
-        "TextblockHeight": 172.79999999999998,
-        "Background": "#FFA4E1FF"
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 624.740069844749,
+        "InitialHeight": 232.1197030211997,
+        "TextblockHeight": 105.6,
+        "Background": "#FFB9F9E1"
       },
       {
         "Id": "f148d5660ce6423ca1972e8160da092c",
-        "Title": "List of duplicates",
+        "Title": "List of groups with duplicates >1",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
           "77bb31bc11d444a4835ae9e6b9800b1b",
-          "b7e7e9b24496468285cb9cfca33b1f12"
+          "b7e7e9b24496468285cb9cfca33b1f12",
+          "72fcb6af80cc4157b4e15112c72e2323"
         ],
-        "HasNestedGroups": false,
-        "Left": 2156.8543293512166,
-        "Top": 269.6496754078747,
-        "Width": 485.54620687383886,
-        "Height": 236.43849000055496,
+        "HasNestedGroups": true,
+        "Left": 2195.6409894375633,
+        "Top": 269.8881654084297,
+        "Width": 559.2283880459577,
+        "Height": 584.4296766836644,
         "FontSize": 36.0,
         "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
-        "InitialTop": 342.0496754078747,
-        "InitialHeight": 193.8,
+        "InitialTop": 342.2881654084297,
+        "InitialHeight": 147.77584118168068,
         "TextblockHeight": 62.4,
         "Background": "#FFB9F9E1"
       },
       {
         "Id": "771abd307bb94c779234986b7111c3e0",
         "Title": "List of duplicates - shown as value names",
-        "DescriptionText": "Description <Double click here to edit group description>",
+        "DescriptionText": "If the output is multiple nulls there might be multiple doors that dont have any value in the parameter ''mark''.",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
@@ -814,15 +793,15 @@
           "5c83fb15a4ba449d9e53008f9872530c"
         ],
         "HasNestedGroups": false,
-        "Left": 2772.27067046185,
-        "Top": 184.0300793529428,
+        "Left": 2905.3722295403704,
+        "Top": 271.74223527387704,
         "Width": 366.4000000000001,
-        "Height": 317.79999999999995,
+        "Height": 327.40000000000003,
         "FontSize": 36.0,
         "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
-        "InitialTop": 342.8300793529428,
-        "InitialHeight": 188.99999999999994,
-        "TextblockHeight": 148.79999999999998,
+        "InitialTop": 440.142235273877,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 158.39999999999998,
         "Background": "#FFFFC999"
       },
       {
@@ -836,28 +815,72 @@
           "27df2645f27741cbbad7b83700c0e517"
         ],
         "HasNestedGroups": false,
-        "Left": -328.8619495404496,
-        "Top": -141.83368624847077,
-        "Width": 320.0,
-        "Height": 621.0,
+        "Left": -328.2324310187269,
+        "Top": -142.9882031324899,
+        "Width": 318.4,
+        "Height": 635.4,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": -16.63368624847078,
-        "InitialHeight": 79.4,
+        "InitialTop": -17.78820313248991,
+        "InitialHeight": 145.0,
         "TextblockHeight": 115.2,
         "Background": "#FFB5B5B5"
       },
       {
+        "Id": "72fcb6af80cc4157b4e15112c72e2323",
+        "Title": "Search in this parameter",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "08f6011a1d484c88ad31059361621ab1"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2561.179377483521,
+        "Top": 526.3178420920941,
+        "Width": 183.69,
+        "Height": 313.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 709.1178420920941,
+        "InitialHeight": 160.20000000000005,
+        "TextblockHeight": 172.79999999999998,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "ecaf2eb4859247fea68ec12ea5279e28",
+        "Title": "Search in this parameter",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "e25672cdcf54482bac05a707fa9db1d5"
+        ],
+        "HasNestedGroups": false,
+        "Left": 534.1751593440567,
+        "Top": -119.11501202677809,
+        "Width": 183.69,
+        "Height": 313.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 63.684987973221894,
+        "InitialHeight": 160.2,
+        "TextblockHeight": 172.79999999999998,
+        "Background": "#FFFFB8D8"
+      },
+      {
         "Id": "27df2645f27741cbbad7b83700c0e517",
-        "Title": "Script Name: Duplicate Mark Finder\r\nCategory: QC - Quality Control\r\nAuthor: Catrqu\r\nDate: 16-05-2026\r\nVersion: 1.0\r\nDescription:\r\nThis script scans all doors in the active Revit project and identifies any doors that share the same Mark parameter value. In large or complex projects duplicate marks are difficult to spot manually and can cause errors in schedules, tags and construction documents.\r\nHow to use:\r\n\t1.\tOpen script in Dynamo Player or Dynamo\r\n\t2.\tRun the script\r\n\t3.\tCheck the Output group for the list of duplicate Mark values\r\n\t4.\tGo into Revit and manually fix the flagged doors\r\nInput: All doors in the active Revit project\r\nOutput: A list of Mark values that appear more than once\r\nNotes:\r\n\t•\tScript is currently set up for Doors only\r\n\t•\tCan be adapted for Windows, Rooms or any other category by changing the Category input node\r\n\t•\tScript only reports duplicates — it does not change anything in your model\r\n",
+        "Title": "Script Name: Duplicate Mark Finder\nCategory: QC - Quality Control\nAuthor: CatBuilds\nDate: 16-05-2026\nVersion: 1.1\nDescription:\nThis script scans all doors in the active Revit project and identifies any doors that share the same Mark parameter value. In large or complex projects duplicate marks are difficult to spot manually and can cause errors in schedules, tags and construction documents.How to use:\n    1.    Open script in Dynamo Player or Dynamo\n    2.    Run the script\n    3.    Check the Output group for the list of duplicate Mark values\n    4.    Go into Revit and manually fix the flagged doors\nInput: All doors in the active Revit project\nOutput: A list of Mark values that appear more than once\nNotes:\n    •    Script is currently set up for Doors only\n    •    Can be adapted for Windows, Rooms or any other category by changing the Category input node. Remember to change the parameter name (string) as it differentiates between what category you choose to scan. If the output is multiple nulls there might be multiple doors that dont have any value in the parameter ''mark''.\n    •    Script only reports duplicates — it does not             change anything in your model\n",
         "DescriptionText": null,
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [],
         "HasNestedGroups": false,
-        "Left": -318.8619495404496,
-        "Top": -8.63368624847078,
+        "Left": -318.2324310187269,
+        "Top": -9.788203132489912,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -868,8 +891,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 318.8716458244602,
-    "Y": 299.7141306686081,
-    "Zoom": 0.23176444178408304
+    "X": -790.874715812292,
+    "Y": 68.71954686847147,
+    "Zoom": 0.46522642451591273
   }
 }

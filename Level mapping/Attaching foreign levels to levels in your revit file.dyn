@@ -2,7 +2,7 @@
   "Uuid": "27f621bd-4d16-442f-aaef-e21f8e1c0d82",
   "IsCustomNode": false,
   "Description": "",
-  "Name": "Attaching foreign lavels to levels in your revit file",
+  "Name": "Attaching foreign levels to levels in your revit file",
   "ElementResolver": {
     "ResolutionMap": {}
   },
@@ -249,37 +249,6 @@
       "FunctionSignature": "DSCore.List.Contains@var[]..[],var[]..[]",
       "Replication": "Longest",
       "Description": "Determines if the given list contains the given item. This function searches through the sublists contained in it.\n\nList.Contains (list: var[]..[], item: var[]..[]): bool"
-    },
-    {
-      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
-      "WatchWidth": 200.0,
-      "WatchHeight": 200.0,
-      "Id": "e40f080861984096b729babb754e6c92",
-      "NodeType": "ExtensionNode",
-      "Inputs": [
-        {
-          "Id": "e2491f49249d4488a8d16b2192b3ffbd",
-          "Name": "",
-          "Description": "Node to show output from",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "894b06599c57483dbbee758c5c12e7c5",
-          "Name": "",
-          "Description": "Node output",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Disabled",
-      "Description": "Visualizes a node's output"
     },
     {
       "ConcreteType": "DSRevitNodesUI.ElementsAtLevel, DSRevitNodesUI",
@@ -735,6 +704,68 @@
       "Replication": "Disabled",
       "Description": "Creates a number.",
       "InputValue": 0.0
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "9266cc47-e982-46fc-9fd4-59bd7fb19a53",
+      "FunctionType": "Graph",
+      "Id": "4abb6219ecf04426ba6c2578491a3b34",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b347b1950a744e3c8838dd8650516058",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d1553f6e4364891839ca141f6514589",
+          "Name": "name",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets an element's name. Unlike the OOTB node, this node should work for *all* Revit elements that have names and will also return the localized names of system parameters, parameter groups, display unit types, parameter types, unit symbol types, unit types and ForgeTypeIds."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "c6615724025b4530be62dacaa904df58",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "9934cb43f9ae48b29202f098247ad560",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "202d2539f5534961a955046f4cd34e7e",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
     }
   ],
   "Connectors": [
@@ -788,12 +819,6 @@
     },
     {
       "Start": "18cb2b848caf40dcba7c56a70c110847",
-      "End": "e2491f49249d4488a8d16b2192b3ffbd",
-      "Id": "18e79acf5bb04813a693e4a8f8f80506",
-      "IsHidden": "False"
-    },
-    {
-      "Start": "18cb2b848caf40dcba7c56a70c110847",
       "End": "364ad23c827846bdbc30fc2682f2374f",
       "Id": "bc47cbef7d2f428e8af4f8e48c170329",
       "IsHidden": "False"
@@ -841,6 +866,12 @@
       "IsHidden": "False"
     },
     {
+      "Start": "bf45cda1127a43da99b2c3ee72ecfbc3",
+      "End": "9934cb43f9ae48b29202f098247ad560",
+      "Id": "9b8593e69f284c37b1880e610707c960",
+      "IsHidden": "False"
+    },
+    {
       "Start": "dc737e7885d24a079598c40eaa470ee4",
       "End": "19b74dd95d384237bae7f7dc8e631e46",
       "Id": "13ec474a0e1249abbf49d4ad9f81d933",
@@ -855,7 +886,13 @@
     {
       "Start": "d49995871b4a429aa182f711f97f8f68",
       "End": "7beeb4d157e14e888d2b089552410737",
-      "Id": "ec7eb7871f6445dd8e654b2e1badc9b1",
+      "Id": "2aa75fbd47d44c0fa3f5da93e1c88fd8",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d49995871b4a429aa182f711f97f8f68",
+      "End": "b347b1950a744e3c8838dd8650516058",
+      "Id": "25db296df5834f8aae671815a45adf1f",
       "IsHidden": "False"
     },
     {
@@ -883,8 +920,19 @@
       "IsHidden": "False"
     }
   ],
-  "Dependencies": [],
-  "NodeLibraryDependencies": [],
+  "Dependencies": [
+    "9266cc47-e982-46fc-9fd4-59bd7fb19a53"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Clockwork for Dynamo 3.x",
+      "Version": "3.3.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "4abb6219ecf04426ba6c2578491a3b34"
+      ]
+    }
+  ],
   "EnableLegacyPolyCurveBehavior": true,
   "Thumbnail": "",
   "GraphDocumentationURL": null,
@@ -940,8 +988,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 275.8594829264266,
-        "Y": 432.57079266201913
+        "X": 276.9501729942151,
+        "Y": 438.02424300096226
       },
       {
         "Id": "6d998139c6674fccabfe816e769c96e9",
@@ -950,8 +998,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 8.080467617551676,
-        "Y": 438.4489070710582
+        "X": 5.262471367569674,
+        "Y": 435.63091082107627
       },
       {
         "Id": "a22672bf30144549b9d749359262feab",
@@ -961,7 +1009,7 @@
         "Excluded": false,
         "ShowGeometry": true,
         "X": 753.5147588083295,
-        "Y": 186.5216991420932
+        "Y": 188.10173022410237
       },
       {
         "Id": "04e2dabf1cc641c68f4af4f7907fab5d",
@@ -970,8 +1018,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 617.5990863237097,
-        "Y": 639.0530228223307
+        "X": 635.1190087779795,
+        "Y": 684.2421663481696
       },
       {
         "Id": "2ce9c7c03f7744b8ac79d1eaf8f801be",
@@ -980,8 +1028,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 617.2290352429931,
-        "Y": 772.1554760694974
+        "X": 634.7489576972629,
+        "Y": 817.3446195953361
       },
       {
         "Id": "5cabe32447fa4947915b144b11a86d95",
@@ -990,8 +1038,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 855.0420441319695,
-        "Y": 678.3874578798445
+        "X": 848.8531861507136,
+        "Y": 658.9253718255834
       },
       {
         "Id": "c9c7c78ac4104c4e95cb0bf1e058b429",
@@ -1000,8 +1048,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1500.6489499152524,
-        "Y": 443.7775422301106
+        "X": 1469.3166022365826,
+        "Y": 438.03138338806275
       },
       {
         "Id": "b41c5742d8544d5a96d2b88ee182efbe",
@@ -1010,18 +1058,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1167.0733264378646,
-        "Y": 657.0219127004854
-      },
-      {
-        "Id": "e40f080861984096b729babb754e6c92",
-        "Name": "Watch",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "ShowGeometry": true,
-        "X": 1608.4732018257262,
-        "Y": 1155.227003710912
+        "X": 1160.8844684566086,
+        "Y": 637.5598266462241
       },
       {
         "Id": "d052c44a4f784b9586dc0bb81f89d4d3",
@@ -1030,8 +1068,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 1981.7682830991348,
-        "Y": 834.7260959369836
+        "X": 2029.0905605830244,
+        "Y": 941.955510216443
       },
       {
         "Id": "f16d830573c3451880130d9867cc3898",
@@ -1040,8 +1078,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2316.8776764914514,
-        "Y": 1275.8479686305207
+        "X": 2245.493891944518,
+        "Y": 1636.8025613933603
       },
       {
         "Id": "39e3fa2eba064f3c80202f7930ed1294",
@@ -1050,8 +1088,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2880.5459322429565,
-        "Y": 1674.5873062270664
+        "X": 3127.8462866034774,
+        "Y": 1558.2538358885035
       },
       {
         "Id": "d13da00a55ed44b888791b8d558503c2",
@@ -1060,18 +1098,18 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3080.3095685396115,
-        "Y": 1668.5386588109984
+        "X": 3359.2285012396524,
+        "Y": 1525.0102757178674
       },
       {
         "Id": "6d75e76a6a544ad0861dc73e399a61f4",
         "Name": "List.FilterByBoolMask",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Excluded": false,
+        "Excluded": true,
         "ShowGeometry": true,
-        "X": 4031.154385913959,
-        "Y": 1182.46852496331
+        "X": 4381.072694966412,
+        "Y": 912.6234799076841
       },
       {
         "Id": "b4d5fc4f0c3a4eac8b49674c85146163",
@@ -1080,8 +1118,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3330.0453477789188,
-        "Y": 1428.8335758024207
+        "X": 3612.6964936631007,
+        "Y": 1383.0799154164188
       },
       {
         "Id": "b085f7a8c5424deba1db5017cdbc360b",
@@ -1090,8 +1128,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4446.374332531979,
-        "Y": 875.7635627277382
+        "X": 5057.0225921188185,
+        "Y": 483.31430049697633
       },
       {
         "Id": "36350671980740598a7cbb92cf171b9d",
@@ -1100,8 +1138,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 4083.20394521315,
-        "Y": 1024.6100935633829
+        "X": 4760.908200891811,
+        "Y": 431.9694606918699
       },
       {
         "Id": "d9fa63354505442295422d7eb0ca066f",
@@ -1110,8 +1148,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2696.0526145269164,
-        "Y": 1108.245818600256
+        "X": 2394.4250736753547,
+        "Y": 931.511784350753
       },
       {
         "Id": "7c4d6d2c7e3e4c27a4f84609f93a15d1",
@@ -1120,8 +1158,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3581.159843709436,
-        "Y": 1521.874652166544
+        "X": 3920.662476574685,
+        "Y": 1423.9329171356749
       },
       {
         "Id": "0f7edc33718d416ba6ffdb5ae9b4c800",
@@ -1130,8 +1168,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 3806.947836511995,
-        "Y": 1374.2865419258976
+        "X": 4148.023360657771,
+        "Y": 1267.4477651004595
       },
       {
         "Id": "99ab3671064e471bbbc82adf10baaf9a",
@@ -1140,8 +1178,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2005.563005049375,
-        "Y": -137.68199572536255
+        "X": 2032.8646906199522,
+        "Y": 60.97320706815108
       },
       {
         "Id": "035772ddfbec41c489889dd288a86008",
@@ -1150,8 +1188,8 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2665.931157490334,
-        "Y": 220.03053863394115
+        "X": 2731.444181159614,
+        "Y": 61.55003895729175
       },
       {
         "Id": "69593f56519446c89c9a93ed899fb43e",
@@ -1160,37 +1198,58 @@
         "IsSetAsOutput": false,
         "Excluded": false,
         "ShowGeometry": true,
-        "X": 2390.1248095682904,
-        "Y": 346.0172784520592
+        "X": 2538.528950375777,
+        "Y": 394.2530613504726
+      },
+      {
+        "Id": "4abb6219ecf04426ba6c2578491a3b34",
+        "Name": "Element.Name+",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2767.510817168553,
+        "Y": 691.6713588246446
+      },
+      {
+        "Id": "c6615724025b4530be62dacaa904df58",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 5428.16904862949,
+        "Y": 491.4531842555648
       }
     ],
     "Annotations": [
       {
         "Id": "d3cb5fad3a2b40b19ca24d1009fd71e4",
-        "Title": "Title <Double click here to edit group title>",
+        "Title": "Scanning for all levels in project",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
           "9551441c35c34442a1afa0b9e6610b22",
-          "6d998139c6674fccabfe816e769c96e9"
+          "6d998139c6674fccabfe816e769c96e9",
+          "bb146cdfa41740209d4f7df5b19ce04f"
         ],
         "HasNestedGroups": false,
-        "Left": -1.919532382448324,
-        "Top": 316.9707926620191,
-        "Width": 544.5790153088749,
-        "Height": 253.27811440903906,
+        "Left": -4.737528632430326,
+        "Top": 304.8309108210763,
+        "Width": 548.4877016266454,
+        "Height": 264.99333217988595,
         "FontSize": 36.0,
         "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
-        "InitialTop": 432.57079266201913,
-        "InitialHeight": 167.67811440903904,
-        "TextblockHeight": 105.6,
+        "InitialTop": 377.2309108210763,
+        "InitialHeight": 150.87811440903909,
+        "TextblockHeight": 62.4,
         "Background": "#FFFFB8D8"
       },
       {
         "Id": "b95cbc5e3d844719958f08d388d19cf9",
-        "Title": "Title <Double click here to edit group title>",
+        "Title": "Names of levels in project",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -1200,66 +1259,69 @@
         ],
         "HasNestedGroups": false,
         "Left": 743.5147588083295,
-        "Top": -68.27830085790677,
+        "Top": 19.70173022410239,
         "Width": 232.80000000000007,
-        "Height": 386.6,
+        "Height": 300.2,
         "FontSize": 36.0,
-        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 186.5216991420932,
-        "InitialHeight": 161.8,
-        "TextblockHeight": 244.79999999999998,
-        "Background": "#FFC1D676"
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 188.10173022410237,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 158.39999999999998,
+        "Background": "#FFB9F9E1"
       },
       {
         "Id": "6c016544ce324eaaa1143bb09869c984",
-        "Title": "Title <Double click here to edit group title>",
-        "DescriptionText": "Description <Double click here to edit group description>",
+        "Title": "Finding Level: \"L1\"",
+        "DescriptionText": "Scanning for anything containing ''L1''. True = match",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
-          "04e2dabf1cc641c68f4af4f7907fab5d",
-          "2ce9c7c03f7744b8ac79d1eaf8f801be",
           "5cabe32447fa4947915b144b11a86d95",
-          "b41c5742d8544d5a96d2b88ee182efbe"
+          "b41c5742d8544d5a96d2b88ee182efbe",
+          "b95cbc5e3d844719958f08d388d19cf9",
+          "385c8862e0b34b2e8e549b4dd2ecf9c9"
         ],
-        "HasNestedGroups": false,
-        "Left": 607.2290352429931,
-        "Top": 566.6530228223307,
-        "Width": 753.8442911948715,
-        "Height": 335.70245324716666,
+        "HasNestedGroups": true,
+        "Left": 614.7489576972629,
+        "Top": -52.69826977589761,
+        "Width": 740.1355107593457,
+        "Height": 1015.2428893712338,
         "FontSize": 36.0,
-        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 639.0530228223307,
-        "InitialHeight": 293.3024532471667,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 19.70173022410239,
+        "InitialHeight": 166.36554517935917,
         "TextblockHeight": 62.4,
-        "Background": "#FFC1D676"
+        "Background": "#FFB5B5B5"
       },
       {
         "Id": "c48b4952b9894a95894d118b582b215e",
-        "Title": "Elements on S1 and S2",
-        "DescriptionText": "Description <Double click here to edit group description>",
+        "Title": "Isolated info about the rest of the levels",
+        "DescriptionText": "This is a list of the rest of the previous filtered list.",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
-          "d052c44a4f784b9586dc0bb81f89d4d3"
+          "6d0fcf37d4f74312b1760e9fab379604",
+          "0a40395e22944f9cb58d366ad4ebe206",
+          "476979f4c26244439b474f8590137277",
+          "4abb6219ecf04426ba6c2578491a3b34"
         ],
-        "HasNestedGroups": false,
-        "Left": 1971.7682830991348,
-        "Top": 709.5260959369836,
-        "Width": 248.80000000000018,
-        "Height": 257.0,
+        "HasNestedGroups": true,
+        "Left": 2009.0905605830244,
+        "Top": 619.2713588246446,
+        "Width": 979.6202565855283,
+        "Height": 1164.3312025687155,
         "FontSize": 36.0,
-        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
-        "InitialTop": 834.7260959369836,
-        "InitialHeight": 161.79999999999995,
-        "TextblockHeight": 115.2,
-        "Background": "#FFFFC999"
+        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
+        "InitialTop": 691.6713588246446,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
       },
       {
         "Id": "0a40395e22944f9cb58d366ad4ebe206",
-        "Title": "Elements in names on S1 and S2",
+        "Title": "Name of all elements on level ''S1'', \"S2\" and ''L2''.",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
@@ -1268,65 +1330,551 @@
           "f16d830573c3451880130d9867cc3898"
         ],
         "HasNestedGroups": false,
-        "Left": 2306.8776764914514,
-        "Top": 1107.4479686305208,
+        "Left": 2235.493891944518,
+        "Top": 1382.0025613933603,
         "Width": 232.80000000000018,
-        "Height": 300.1999999999998,
+        "Height": 386.5999999999999,
         "FontSize": 36.0,
-        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
-        "InitialTop": 1275.8479686305207,
-        "InitialHeight": 161.79999999999995,
-        "TextblockHeight": 158.39999999999998,
-        "Background": "#FFFFC999"
+        "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
+        "InitialTop": 1636.8025613933603,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 244.79999999999998,
+        "Background": "#FFA4E1FF"
       },
       {
-        "Id": "b3a25887463b436e827caa71f3db1c1d",
-        "Title": "Title <Double click here to edit group title>",
+        "Id": "09dad3a8f68b4a788df5bc3d91081199",
+        "Title": "Script description",
+        "DescriptionText": "Remmeber to UNFREEZE the end of the nodes",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "315813aaa7c54aa9877706ca35b8348a"
+        ],
+        "HasNestedGroups": false,
+        "Left": -339.38568550939385,
+        "Top": 317.87110769968956,
+        "Width": 320.0,
+        "Height": 597.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 390.27110769968954,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "385c8862e0b34b2e8e549b4dd2ecf9c9",
+        "Title": "Value L1",
+        "DescriptionText": "Set the name of the item you want to find",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "04e2dabf1cc641c68f4af4f7907fab5d",
+          "2ce9c7c03f7744b8ac79d1eaf8f801be",
+          "77bcb86fdaad49fb8e25e072df6d1350"
+        ],
+        "HasNestedGroups": false,
+        "Left": 624.7489576972629,
+        "Top": 562.0217632855256,
+        "Width": 169.1700510807167,
+        "Height": 385.52285630981055,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 644.0217632855256,
+        "InitialHeight": 278.10245324716664,
+        "TextblockHeight": 72.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "3ef3eb57fa43476ea9e72cc6ece10f0d",
+        "Title": "Filtering:\r\n''L1'' -> in\r\nRest -> out",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
-          "e40f080861984096b729babb754e6c92"
+          "c9c7c78ac4104c4e95cb0bf1e058b429"
         ],
         "HasNestedGroups": false,
-        "Left": 1598.4732018257262,
-        "Top": 986.827003710912,
-        "Width": 298.39999999999986,
-        "Height": 460.19999999999993,
+        "Left": 1459.3166022365826,
+        "Top": 269.6313833880628,
+        "Width": 254.4000000000001,
+        "Height": 332.19999999999993,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 438.03138338806275,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 158.39999999999998,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "bbf22320086b4c6c84527975d5b1c18a",
+        "Title": "List of all elements on level ''L1''",
+        "DescriptionText": "A list of all the elements that are set to this level.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "99ab3671064e471bbbc82adf10baaf9a"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2022.8646906199522,
+        "Top": -107.4267929318489,
+        "Width": 248.79999999999995,
+        "Height": 300.19999999999993,
         "FontSize": 36.0,
         "GroupStyleId": "bc688959-ce34-4bf5-90f8-6ddd23f80989",
-        "InitialTop": 1155.227003710912,
-        "InitialHeight": 321.79999999999995,
+        "InitialTop": 60.97320706815108,
+        "InitialHeight": 145.00000000000003,
         "TextblockHeight": 158.39999999999998,
         "Background": "#FFA4E1FF"
       },
       {
-        "Id": "12798f7e5b9042acae8d229dadd10f3c",
-        "Title": "From list",
+        "Id": "0103ec09f9bd446d877cd3e9439a0124",
+        "Title": "Isolated info about Level \"L1\"",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "bbf22320086b4c6c84527975d5b1c18a",
+          "8fd2640115164c49ac53f43ff617cf17",
+          "f6295a85a29d4cec8a58b4c61cff6619"
+        ],
+        "HasNestedGroups": true,
+        "Left": 2012.8646906199522,
+        "Top": -179.8267929318489,
+        "Width": 961.7794905396615,
+        "Height": 719.2798542823215,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": -107.4267929318489,
+        "InitialHeight": 189.0,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "6d0fcf37d4f74312b1760e9fab379604",
+        "Title": "Collapsing list into one.",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d9fa63354505442295422d7eb0ca066f"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2384.4250736753547,
+        "Top": 763.111784350753,
+        "Width": 214.4000000000001,
+        "Height": 327.4,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 931.511784350753,
+        "InitialHeight": 189.0,
+        "TextblockHeight": 158.39999999999998,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "8bc041e930e04b24a3982633c28e5055",
+        "Title": "Scanning for elements on ''S1''",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b4d5fc4f0c3a4eac8b49674c85146163"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3602.6964936631007,
+        "Top": 1157.0799154164188,
+        "Width": 204.0,
+        "Height": 385.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 1383.0799154164188,
+        "InitialHeight": 188.9999999999999,
+        "TextblockHeight": 216.0,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "d8807fff541a4e018260ee1c06f2b645",
+        "Title": "Collecting elemets on level \"S1\"",
+        "DescriptionText": "Catching all the elements that contains S1",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "7c4d6d2c7e3e4c27a4f84609f93a15d1",
+          "0f7edc33718d416ba6ffdb5ae9b4c800"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3910.662476574685,
+        "Top": 1151.8477651004596,
+        "Width": 412.16088408308633,
+        "Height": 402.28515203521533,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 1267.4477651004595,
+        "InitialHeight": 278.92870408709814,
+        "TextblockHeight": 105.6,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "badb96520ca64d778c5b39a8735f9764",
+        "Title": "Parameter name",
+        "DescriptionText": "Changing values in this specific parameter",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "36350671980740598a7cbb92cf171b9d",
+          "24183f6842b241f1986f5927c4b54534"
+        ],
+        "HasNestedGroups": false,
+        "Left": 4750.908200891811,
+        "Top": 260.7284041132851,
+        "Width": 203.19999999999982,
+        "Height": 301.4410565785849,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 385.92840411328507,
+        "InitialHeight": 160.20000000000005,
+        "TextblockHeight": 115.2,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "f16787a14cb9492681f8b9fd490986f7",
+        "Title": "Collecting elements on specific level whcich we want to relocate",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "8bc041e930e04b24a3982633c28e5055",
+          "d8807fff541a4e018260ee1c06f2b645",
+          "af3f9131618943629617e819ebe095c2",
+          "d13da00a55ed44b888791b8d558503c2",
+          "9ef90317acb54330a0c2924dcaf5a50a"
+        ],
+        "HasNestedGroups": true,
+        "Left": 3107.8462866034774,
+        "Top": 628.6234799076841,
+        "Width": 1527.6264083629344,
+        "Height": 1074.8303559808196,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 701.0234799076841,
+        "InitialHeight": 193.79999999999995,
+        "TextblockHeight": 62.4,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "c4ca9668d07743a2996b6b10ac3ba57c",
+        "Title": "Actively changing the walls from \"S1\" to \"L1\".",
+        "DescriptionText": "This is only for the walls as the parameter refers to only a wall parameter. Check revit to see the new level for walls.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "badb96520ca64d778c5b39a8735f9764",
+          "821b87cc80de4570b11567850f10bf8c"
+        ],
+        "HasNestedGroups": true,
+        "Left": 4740.908200891811,
+        "Top": 135.5284041132851,
+        "Width": 639.314391227007,
+        "Height": 568.1858963836912,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 260.7284041132851,
+        "InitialHeight": 235.39999999999998,
+        "TextblockHeight": 115.2,
+        "Background": "#FFB5B5B5"
+      },
+      {
+        "Id": "8fd2640115164c49ac53f43ff617cf17",
+        "Title": "Catching index \"0\" to catch specific level as Revit object",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "035772ddfbec41c489889dd288a86008",
+          "b321d1752ced4a7190391b449d91a094"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2525.2270597443553,
+        "Top": -97.24996104270824,
+        "Width": 439.4171214152584,
+        "Height": 317.79999999999995,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 61.55003895729175,
+        "InitialHeight": 267.0431830656916,
+        "TextblockHeight": 148.79999999999998,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "f6295a85a29d4cec8a58b4c61cff6619",
+        "Title": "Choose index nr.",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "69593f56519446c89c9a93ed899fb43e"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2528.528950375777,
+        "Top": 197.0530613504726,
+        "Width": 152.80000000000018,
+        "Height": 327.4,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 394.2530613504726,
+        "InitialHeight": 160.2,
+        "TextblockHeight": 187.2,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "476979f4c26244439b474f8590137277",
+        "Title": "List of all elements on level ''S1'', \"S2\" and ''L2''.",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "d052c44a4f784b9586dc0bb81f89d4d3"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2019.0905605830244,
+        "Top": 730.355510216443,
+        "Width": 248.80000000000018,
+        "Height": 343.4000000000001,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 941.955510216443,
+        "InitialHeight": 161.79999999999995,
+        "TextblockHeight": 201.6,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "af3f9131618943629617e819ebe095c2",
+        "Title": "Filtering elements on level ''S1'' into in (output)",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "6d75e76a6a544ad0861dc73e399a61f4"
+        ],
+        "HasNestedGroups": false,
+        "Left": 4371.072694966412,
+        "Top": 701.0234799076841,
+        "Width": 254.39999999999964,
+        "Height": 375.4000000000001,
+        "FontSize": 36.0,
+        "GroupStyleId": "4d68be4a-a04d-4945-9dd5-cdf61079d790",
+        "InitialTop": 912.6234799076841,
+        "InitialHeight": 193.80000000000007,
+        "TextblockHeight": 201.6,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "9ef90317acb54330a0c2924dcaf5a50a",
+        "Title": "Choose level by name",
         "DescriptionText": "Description <Double click here to edit group description>",
         "IsExpanded": true,
         "WidthAdjustment": 0.0,
         "HeightAdjustment": 0.0,
         "Nodes": [
           "39e3fa2eba064f3c80202f7930ed1294",
-          "d13da00a55ed44b888791b8d558503c2"
+          "2c40ed6438254a069e11cbc7d0b59611"
         ],
         "HasNestedGroups": false,
-        "Left": 2870.5459322429565,
-        "Top": 1596.1386588109983,
-        "Width": 379.763636296655,
-        "Height": 208.64864741606812,
+        "Left": 3117.8462866034774,
+        "Top": 1317.0538358885035,
+        "Width": 168.80000000000018,
+        "Height": 371.4000000000001,
+        "FontSize": 36.0,
+        "GroupStyleId": "883066aa-1fe2-44a4-9bd1-c3df86bfe9f6",
+        "InitialTop": 1499.8538358885035,
+        "InitialHeight": 218.60000000000014,
+        "TextblockHeight": 172.79999999999998,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "821b87cc80de4570b11567850f10bf8c",
+        "Title": "Setting new values in chosen parameter",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b085f7a8c5424deba1db5017cdbc360b"
+        ],
+        "HasNestedGroups": false,
+        "Left": 5047.0225921188185,
+        "Top": 314.91430049697635,
+        "Width": 323.1999999999998,
+        "Height": 373.79999999999995,
+        "FontSize": 36.0,
+        "GroupStyleId": "07655dc1-2d65-4fed-8d6a-37235d3e3a8d",
+        "InitialTop": 483.31430049697633,
+        "InitialHeight": 235.39999999999998,
+        "TextblockHeight": 158.39999999999998,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "301edb4df5664ec095af6b32b94bcdb8",
+        "Title": "Remember UI",
+        "DescriptionText": "Description <Double click here to edit group description>",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "c6615724025b4530be62dacaa904df58"
+        ],
+        "HasNestedGroups": false,
+        "Left": 5418.16904862949,
+        "Top": 409.4531842555648,
+        "Width": 298.39999999999964,
+        "Height": 373.79999999999995,
         "FontSize": 36.0,
         "GroupStyleId": "00000000-0000-0000-0000-000000000000",
-        "InitialTop": 1668.5386588109984,
-        "InitialHeight": 368.56629436186154,
-        "TextblockHeight": 62.4,
+        "InitialTop": 491.4531842555648,
+        "InitialHeight": 321.79999999999995,
+        "TextblockHeight": 72.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "315813aaa7c54aa9877706ca35b8348a",
+        "Title": "Script Name: Missing Mark Checker\r\nCategory: QC - Quality Control\r\nAuthor: CatBuilds\r\nDate: 26-05-2026\r\nVersion: 1.0\r\nDescription:\r\n\r\nHow to use:\r\n\t1.\tOpen script in Dynamo Player or Dynamo\r\n\t2.\tRun the script\r\n\t3.\tCheck the Output group for the Element IDs of doors with missing marks\r\n\t4.\tNote the total count of missing marks\r\n\t5.\tGo to Revit → Manage → Select by ID\r\n\t6.\tPaste each ID to locate and fix the door manually\r\nInput: All doors in the active Revit project\r\nOutput:\r\n\t•\tList of door Element IDs with empty Mark values\r\n\t•\tTotal count of doors with missing marks\r\nNotes:\r\n\t•\tScript only reports problems — it does not change anything in your model\r\n\t•\tCan be adapted for Windows, Rooms or any other category by changing the Category input node\r\n\t•\tRun the script again after fixing to confirm all marks are filled\r\n",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": -329.38568550939385,
+        "Top": 398.27110769968954,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "bb146cdfa41740209d4f7df5b19ce04f",
+        "Title": "Insert input",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 80.86247136756967,
+        "Top": 385.2309108210763,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676",
+        "PinnedNode": "6d998139c6674fccabfe816e769c96e9"
+      },
+      {
+        "Id": "77bcb86fdaad49fb8e25e072df6d1350",
+        "Title": "Insert input(s)",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 636.9147142921283,
+        "Top": 652.0217632855256,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2c40ed6438254a069e11cbc7d0b59611",
+        "Title": "Insert input",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 3159.8462866034774,
+        "Top": 1507.8538358885035,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676",
+        "PinnedNode": "39e3fa2eba064f3c80202f7930ed1294"
+      },
+      {
+        "Id": "24183f6842b241f1986f5927c4b54534",
+        "Title": "Insert input",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 4762.643461309812,
+        "Top": 393.92840411328507,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b321d1752ced4a7190391b449d91a094",
+        "Title": "Insert input",
+        "DescriptionText": null,
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [],
+        "HasNestedGroups": false,
+        "Left": 2535.2270597443553,
+        "Top": 164.58209396258633,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
         "Background": "#FFC1D676"
       }
     ],
-    "X": -260.9514182040534,
-    "Y": 240.98273091966604,
-    "Zoom": 0.2526385655029522
+    "X": 105.18722716706941,
+    "Y": 177.66104260117075,
+    "Zoom": 0.12878188899253906
   }
 }
